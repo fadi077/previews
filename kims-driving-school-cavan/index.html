@@ -358,7 +358,7 @@ var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 document.querySelectorAll('.rv-in').forEach(function(el){io.observe(el)});
 try{if(H){var p=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Dublin',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
 var g=function(t){return p.find(function(x){return x.type===t}).value};var d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(g('weekday')),hr=+g('hour')+(+g('minute'))/60;
-var r=document.querySelector('#hrs tr[data-d="'+d+'"]');if(r)r.classList.add('today');var t=H[String(d)];var open=!!t&&hr>=t[0]&&hr<t[1],op=document.getElementById('op');if(op){op.textContent=open?'Open now':'Closed now';if(!open)op.classList.add('closed');}}catch(e){}
+var r=document.querySelector('#hrs tr[data-d="'+d+'"]');if(r)r.classList.add('today');var t=H[String(d)];var open=!!t&&hr>=t[0]&&hr<t[1],op=document.getElementById('op');if(op){op.textContent=open?'Open now':'Closed now';if(!open)op.classList.add('closed');}}}catch(e){}
 var f=document.getElementById('qf');
 f.addEventListener('submit',function(e){e.preventDefault();var ok=true;
 ['n','ph','pc'].forEach(function(id){var el=document.getElementById(id),w=el.parentNode,v=el.value.trim();var bad=!v||(id==='ph'&&v.replace(/\D/g,'').length<9);w.classList.toggle('bad',bad);if(bad)ok=false});
